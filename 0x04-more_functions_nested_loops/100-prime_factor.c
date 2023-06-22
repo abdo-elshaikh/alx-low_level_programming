@@ -9,7 +9,7 @@ int main(void)
 	long int num = 612852475143;
 	long int i = 2;
 
-	while(i < num)
+	while (i < num)
 	{
 		if (num % i == 0)
 			num = num / i;
