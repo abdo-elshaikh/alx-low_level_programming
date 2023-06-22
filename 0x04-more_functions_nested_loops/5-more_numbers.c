@@ -23,5 +23,4 @@ void more_numbers(void)
 		_putchar('\n');
 		y = 0;
 	}
-	_putchar('\n');
 }
