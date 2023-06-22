@@ -19,8 +19,7 @@ void more_numbers(void)
 				_putchar('1');
 				y = x % 10;
 			}
-			else
-				_putchar(y + '0');
+			_putchar(y + '0');
 		}
 		_putchar('\n');
 	}
