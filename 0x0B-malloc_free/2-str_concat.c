@@ -24,6 +24,7 @@ char *str_concat(char *s1, char *s2)
 		x++;
 		len++;
 	}
+	len++;
 	ptr = (char *)malloc(len * sizeof(char));
 	for (y = 0; y < i; y++)
 	{
