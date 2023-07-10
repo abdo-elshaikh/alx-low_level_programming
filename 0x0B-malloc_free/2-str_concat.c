@@ -1,39 +1,70 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
+
 /**
- * str_concat - concatenates two strings
- * @s1: first string
- * @s2: second string
- * Return: NULL or pointer
+ * _strlen - returns the length of a string.
+ * @s: string.
+ *
+ * Return: Length of @s.
+ */
+int _strlen(char *s)
+{
+	int i = 0;
+	int cont = 0;
+
+	if (s == NULL)
+		return (0);
+	while (s[i] != '\0')
+	{
+		cont++;
+		i++;
+	}
+	return (cont);
+}
+
+/**
+ * *_strcat - concatenates two strings.
+ * @dest: destination.
+ * @src: source.
+ *
+ * Return: pointer to the resulting string dest.
+ */
+char *_strcat(char *dest, char *src)
+{
+	int i, j = 0;
+	char *ptr = dest;
+
+	if (src == NULL)
+		return (ptr);
+	for (i = 0; dest[i] != '\0'; i++)
+	{
+	}
+	for (; src[j] != '\0'; i++, j++)
+		dest[i] = src[j];
+	dest[i + 1] = src[j + 1];
+	return (ptr);
+}
+
+/**
+ * str_concat - concatenates two strings in a newly allocated space in memory.
+ * @s1: first sring.
+ * @s2: second string.
+ *
+ * Return: pointer to the concatenated string.
+ * or NULL if insufficient memory was available.
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0, x = 0, len = 0;
-	int y, z;
-	char *ptr;
+	int s1_length = _strlen(s1);
+	int s2_length = _strlen(s2);
+	char *aux = malloc(sizeof(char) * (s1_length + s2_length + 1));
 
-	if (s1 == NULL || s2 == NULL)
+	if (aux == NULL)
 		return (NULL);
-	while (s1[i] != '\0')
-	{
-		i++;
-		len++;
-	}
-	while (s2[x] != '\0')
-	{
-		x++;
-		len++;
-	}
-	len++;
-	ptr = (char *)malloc(len * sizeof(char));
-	for (y = 0; y < i; y++)
-	{
-		ptr[y] = s1[y];
-	}
-	for (z = 0; z < x; z++)
-	{
-		ptr[y] = s2[z];
-		y++;
-	}
-	return (ptr);
+
+	aux[0] = '\0';
+	aux = _strcat(aux, s1);
+	aux = _strcat(aux, s2);
+	return (aux);
 }
+
