@@ -28,8 +28,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int len1 = 0, len2 = 0;
 	unsigned int i, j;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 
@@ -37,19 +35,28 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (ptr == NULL)
 		return (NULL);
 
-	if (n >= len2)
+	if (s1 != NULL)
 	{
-		for (i = 0; s1[i] != '\0'; i++)
-			ptr[i] = s1[i];
-		for (j = 0; s2[i] != '\0'; j++, i++)
-			ptr[i] = s2[j];
-	}
-	else
-	{
-		for (i = 0; s1[i] != '\0'; i++)
-			ptr[i] = s1[i];
-		for (j = 0; j < n; j++, i++)
-			ptr[i] = s2[j];
+		if (n >= len2)
+		{
+			for (i = 0; s1[i] != '\0'; i++)
+				ptr[i] = s1[i];
+			if (s2 != NULL)
+			{
+				for (j = 0; s2[i] != '\0'; j++, i++)
+					ptr[i] = s2[j];
+			}
+		}
+		else
+		{
+			for (i = 0; s1[i] != '\0'; i++)
+				ptr[i] = s1[i];
+			if (s2 != NULL)
+			{
+				for (j = 0; j < n; j++, i++)
+					ptr[i] = s2[j];
+			}
+		}
 	}
 	ptr[i] = '\0';
 	return (ptr);
