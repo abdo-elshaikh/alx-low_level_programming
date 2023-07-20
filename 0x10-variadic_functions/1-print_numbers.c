@@ -9,17 +9,19 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list lst;
 	unsigned int i = 0;
+	int num;
 
 	va_start(lst, n);
 	for (i = 0; i < n; i++)
 	{
+		num = va_arg(lst, int);
 		if (separator == NULL || i == (n - 1))
 		{
-			printf("%d", va_arg(lst, int));
+			printf("%d", num);
 		}
 		else
 		{
-			printf("%d%s", va_arg(lst, int), separator);
+			printf("%d%s", num, separator);
 		}
 		
 	}
