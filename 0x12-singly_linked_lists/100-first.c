@@ -1,10 +1,11 @@
+#include <stdlib.h>
 #include <stdio.h>
+
 /**
- * print_befor_main - function
- * desciription: print function befor main
- * Return: void
+ * first - prints before main
  */
-void __attribute__((constructor))print_before_main()
+void __attribute__ ((constructor)) first()
 {
-	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
