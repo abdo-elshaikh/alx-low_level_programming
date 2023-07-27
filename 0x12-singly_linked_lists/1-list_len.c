@@ -1,18 +1,17 @@
 #include "lists.h"
 /**
- * lists_len - function
- * @h: arry 
+ * list_len - function
+ * @h: pointer for array
  * Return: len
  */
 size_t list_len(const list_t *h)
 {
 	size_t len = 0;
-	list_t *current = h;
 
-	while (current != NULL)
+	while (h)
 	{
 		len++;
-		current = current->next;
+		h = h->next;
 	}
 	return (len);
 }
