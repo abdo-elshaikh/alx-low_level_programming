@@ -5,12 +5,12 @@ them and how to use them with `$LD_LIBRARY_PATH`, `nm`, `ldd`, and `ldconfig`.
 
 ## Tests :heavy_check_mark:
 
-* [tests](./tests): Folder of test files. Provided by Holberton School.
+* [tests](./tests): Folder of test files.
 
 ## Tasks :page_with_curl:
 
 * **0. A library is not a luxury but one of the necessities of life**
-  * [libholberton.so](./libholberton.so): C dynamic library containing all the functions
+  * [libholberton.so](./libdynamic.so): C dynamic library containing all the functions
   listed below:
     * `int _putchar(char c);`
     * `int _islower(int c);`
@@ -33,7 +33,7 @@ them and how to use them with `$LD_LIBRARY_PATH`, `nm`, `ldd`, and `ldconfig`.
     * `char *_strpbrk(char *s, char *accept);`
     * `char *_strstr(char *haystack, char *needle);`
 
-  * [holberton.h](./holberton.h): Header file containing the prototypes of all functions
+  * [holberton.h](./main.h): Header file containing the prototypes of all functions
   included in `libholberton.so`.
 
 * **1. Without libraries what have we? We have no past and no future**
