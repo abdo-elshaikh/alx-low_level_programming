@@ -34,7 +34,7 @@ hash_node_t *set_pair(const char *key, const char *value)
  * Return: the node, or NULL if failed.
  */
 int set_pair_only(hash_table_t *ht, const char *key,
-		  const char *value, unsigned long int index)
+		const char *value, unsigned long int index)
 {
 	hash_node_t *node = set_pair(key, value);
 
